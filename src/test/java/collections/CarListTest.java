@@ -61,5 +61,26 @@ class CarListTest {
         Car car = carList.get(50);
         assertEquals("Brand50", car.getBrand());
     }
+
+    @Test
+    void insertToTheMiddleOfTheList() {
+        Car car = new Car("B", 1);
+        carList.add(car, 50);
+        assertEquals("B", carList.get(50).getBrand());
+    }
+
+    @Test
+    void insertToTheTopOfTheList() {
+        Car car = new Car("B", 1);
+        carList.add(car, 0);
+        assertEquals("B", carList.get(0).getBrand());
+    }
+
+    @Test
+    void insertToTheEndOfTheList() {
+        Car car = new Car("B", 1);
+        carList.add(car, 100);
+        assertEquals("B", carList.get(100).getBrand());
+    }
 }
 
